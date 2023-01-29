@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>User Management System</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<style>
+		h2 {
+			text-align: center;
+		}
+
+		body {
+			color: white;
+		}
+	</style>
+</head>
+
+<body data-bs-theme="dark">
+	<div class="container">
+		<div class="container-fluid">
+			<h1 style="text-transform: uppercase;">User Management System</h1>
+			<hr>
+			<h2>Save User</h2>
+			<form action="#" th:action="@{/save}" th:object="${user}" method="POST">
+				<div class=" mb-3">
+					<label class="form-label">First Name</label>
+					<input type="text" class="form-control" th:field="*{firstName}" data-bs-theme="light">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Last Name</label>
+					<input type="text" class="form-control" th:field="*{lastName}" data-bs-theme="light">
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputEmail1" class="form-label">Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+						th:field="*{email}" data-bs-theme="light">
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputPassword1" class="form-label">Password</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" th:field="*{password}"
+						data-bs-theme="light">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			<hr>
+			<a th:href="@{/}" style="color:beige;"> Back to User List</a>
+		</div>
+	</div>
+
+</body>
+
+</html>
